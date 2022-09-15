@@ -1,31 +1,33 @@
 package array;
 
+
+import utility.Utils;
+
+/*Program to rotate array by given number of step
+
+        Input:
+        arr[] = {1, 2, 3, 4, 5, 6, 7}, d = 2
+        Output: 3 4 5 6 7 1 2
+
+        Input: arr[] = {3, 4, 5, 6, 7, 1, 2}, d=2
+        Output: 5 6 7 1 2 3 4*/
 public class ArrayRotation {
 
 
     public static void main(String[] args) {
-        int[] array = new int[]{1,2,5,6,8};
+        Integer[] array = new Integer[]{1,2,5,6,8};
+        int displacement = 3;
+        Integer[] result = rotateArray(array,displacement);
 
-        int[] result = rotateArray(array,4);
-
-
-        for (int k : array) {
-            System.out.print(k + " , ");
-        }
-        System.out.println();
-        System.out.println("After rotation of 2 space");
-        for (int j : result) {
-            System.out.print(j + " , ");
-        }
+        Utils.printArray(array);
+        System.out.println("After rotation of "+ displacement+" space");
+        Utils.printArray(result);
     }
 
 
-    public  static  int[] rotateArray(int[] array, int displacement){
-
+    public  static  Integer[] rotateArray(Integer[] array, int displacement){
         int len = array.length;
-        int[] result = new int[len];
-
-
+        Integer[] result = new Integer[len];
         for(int i=0;i<array.length;i++){
                 if(i+displacement>=len){
                     result[i+displacement-len]=array[i];
