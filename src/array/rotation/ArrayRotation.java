@@ -1,4 +1,4 @@
-package array;
+package array.rotation;
 
 
 import utility.Utils;
